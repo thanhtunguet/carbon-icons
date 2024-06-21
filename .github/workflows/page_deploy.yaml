@@ -43,8 +43,7 @@ jobs:
 
       - name: Build static assets
         run: |
-          yarn install
-          yarn build
+          npm i -g fantasticon
 
       - name: Generate docs and assets
         working-directory: tool
