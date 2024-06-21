@@ -6,5 +6,6 @@ dart font_generator.dart
 
 echo "formatting generated dart file"
 dart format generated/carbon_fonts.dart
+cp generated/carbon_fonts.dart ../lib/src/fonts/carbon_fonts.dart
 
 exec $SHELL;
