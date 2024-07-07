@@ -5,6 +5,6 @@ class _CarbonIconData extends IconData {
       : super(
           codePoint,
           fontFamily: 'CarbonFonts',
-          fontPackage: 'carbon_icons',
+          fontPackage: 'supa_carbon_icons',
         );
 }

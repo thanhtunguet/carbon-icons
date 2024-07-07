@@ -1,7 +1,7 @@
 name: supa_carbon_icons
 description: A Flutter package which includes 1585 Carbon icons from the Carbon Design System.
 homepage: https://github.com/thanhtunguet/carbon-icons
-version: 0.0.1+3
+version: 0.0.1+4
 
 environment:
   sdk: ">=2.12.0 <4.0.0"
