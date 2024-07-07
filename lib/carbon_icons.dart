@@ -1,3 +1,3 @@
-library carbon_icons;
+library supa_carbon_icons;
 
-export 'package:carbon_icons/src/fonts/carbon_fonts.dart';
+export 'package:supa_carbon_icons/src/fonts/carbon_fonts.dart';

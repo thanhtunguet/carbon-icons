@@ -2,7 +2,7 @@
 
 import 'package:flutter/widgets.dart';
 
-part 'package:carbon_icons/src/widgets/icon_data.dart';
+part 'package:supa_carbon_icons/src/widgets/icon_data.dart';
 
 class CarbonIcons {
   CarbonIcons._();

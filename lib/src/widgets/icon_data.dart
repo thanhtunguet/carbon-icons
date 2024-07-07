@@ -1,4 +1,4 @@
-part of 'package:carbon_icons/src/fonts/carbon_fonts.dart';
+part of 'package:supa_carbon_icons/src/fonts/carbon_fonts.dart';
 
 class _CarbonIconData extends IconData {
   const _CarbonIconData(int codePoint)
