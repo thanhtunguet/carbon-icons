@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carbon_icons/carbon_icons.dart';
+import 'package:supa_carbon_icons/supa_carbon_icons.dart';
 
 void main() => runApp(MyApp());
 

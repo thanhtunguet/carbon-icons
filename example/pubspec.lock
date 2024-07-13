@@ -17,13 +17,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  carbon_icons:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1+2"
   characters:
     dependency: transitive
     description:
@@ -167,6 +160,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  supa_carbon_icons:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1+4"
   term_glyph:
     dependency: transitive
     description:
