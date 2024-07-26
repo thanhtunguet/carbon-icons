@@ -1,5 +1,14 @@
 {
+  "name": "supa_carbon_icons",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "node tool/index.js"
+  },
   "devDependencies": {
-    "fantasticon": "^3.0.0"
+    "@twbs/fantasticon": "^3.0.0",
+    "@carbon/icons": "^11.45.0",
+    "p-limit": "^6.1.0",
+    "svgo": "^3.3.2"
   }
 }
