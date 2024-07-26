@@ -17,6 +17,41 @@ const _ignoredKeywords = <String, String>{
   '2k': 'two_k',
   '4k': 'four_k',
 };
+const _reservedWords = <String>[
+  'assert',
+  'break',
+  'case',
+  'catch',
+  'class',
+  'const',
+  'continue',
+  'default',
+  'do',
+  'else',
+  'enum',
+  'extends',
+  'false',
+  'final',
+  'finally',
+  'for',
+  'if',
+  'in',
+  'is',
+  'new',
+  'null',
+  'rethrow',
+  'return',
+  'super',
+  'switch',
+  'this',
+  'throw',
+  'true',
+  'try',
+  'var',
+  'void',
+  'with',
+  'while'
+];
 
 const _template = """
 // Generated code - do not modify!
@@ -53,16 +88,22 @@ void main() {
 }
 
 String _getFontData(int codePoint, String fontName) {
-  String? iconName;
+  String iconName = fontName.toLowerCase();
   for (final entry in _ignoredKeywords.entries) {
     final key = entry.key;
-    if (fontName.toLowerCase().startsWith(key)) {
+    if (iconName.startsWith(key)) {
       iconName = fontName.toLowerCase().replaceFirst(key, entry.value);
       break;
     }
   }
+
+  // Automatically append an underscore if the iconName is a reserved word
+  if (_reservedWords.contains(iconName)) {
+    iconName = "${iconName}_";
+  }
+
   final radix16 = codePoint.toRadixString(16).toUpperCase();
   final iconDataItem =
-      'static const IconData ${iconName ?? fontName.toLowerCase()} = _CarbonIconData(0x$radix16);\n';
+      'static const IconData $iconName = _CarbonIconData(0x$radix16);\n';
   return iconDataItem;
 }
