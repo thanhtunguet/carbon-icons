@@ -75,5 +75,5 @@ node_modules/
 !**/ios/**/default.perspectivev3
 
 # Generated
-/tool/generated/CarbonFonts.ttf
-/tool/generated/carbon_fonts.dart
+/tool/generated/
+/tool/svg/
