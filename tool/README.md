@@ -1,11 +1,12 @@
 SVG -> ttf -> generated mapped IconData .dart class
 
 ### Prerequisites
-- Node.js, then `npm install -g fantasticon`, if running for the first time
+
+- Node.js
 - Dart
 
 #### Generating
-- to the folder `svg/32/` put SVG fonts to update, if any
-- run `runner.sh`
+
+- run `yarn build`
 
 The new generated output (.dart, .ttf and HTML preview) will be in `generated/`.
