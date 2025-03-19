@@ -1,6 +1,8 @@
 echo "converting SVG files to ttf"
 fantasticon --config fantasticon_config.js
 
+mkdir -p generated/
+
 echo "generating IconData from ttf"
 dart font_generator.dart
 
@@ -13,4 +15,8 @@ cp generated/CarbonFonts.ttf ../assets
 
 mv ../docs/CarbonFonts.html ../docs/index.html
 
+rm -rf generated/
+
 exec $SHELL;
+
+
