@@ -40,7 +40,7 @@ jobs:
         run: npm i -g fantasticon
 
       - name: Install dependencies & build
-        working-directory: tool
+        working-directory: .
         run: |
           yarn install
           yarn build
