@@ -38,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "yarn"
 
       - name: Build static assets
@@ -48,8 +48,8 @@ jobs:
       - name: Generate docs and assets
         working-directory: tool
         run: |
-          chmod a+x runner.sh
-          ./runner.sh
+          yarn install
+          yarn build
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
