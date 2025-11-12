@@ -78,16 +78,37 @@ void main() {
 
   final fontAppender = StringBuffer('');
   fontAppender.write(_template);
+
+  // Collect map entries for byName lookup
+  final mapEntries = <String>[];
+
   codePointMap.forEach((fontName, codePoint) {
+    final iconConstantName = _getIconName(fontName);
     fontAppender.write(_getFontData(codePoint, fontName));
+    mapEntries.add("    '$fontName': $iconConstantName");
   });
+
+  // Generate byName lookup map
+  fontAppender.writeln();
+  fontAppender.writeln("  /// Lookup map for resolving icon names to IconData at runtime.");
+  fontAppender.writeln("  /// Uses original icon names from Carbon Design System.");
+  fontAppender.writeln("  static const Map<String, IconData> byName = {");
+  fontAppender.writeln(mapEntries.join(',\n'));
+  fontAppender.writeln("  };");
+  fontAppender.writeln();
+
+  // Generate fromName helper method
+  fontAppender.writeln("  /// Returns the IconData for the given icon name, or null if not found.");
+  fontAppender.writeln("  /// Example: CarbonIcons.fromName('account')");
+  fontAppender.writeln("  static IconData? fromName(String name) => byName[name];");
+
   fontAppender.write("}");
 
   File generatedOutput = File(_generatedOutputFilePath);
   generatedOutput.writeAsStringSync(fontAppender.toString());
 }
 
-String _getFontData(int codePoint, String fontName) {
+String _getIconName(String fontName) {
   String iconName = fontName.toLowerCase();
   for (final entry in _ignoredKeywords.entries) {
     final key = entry.key;
@@ -102,6 +123,11 @@ String _getFontData(int codePoint, String fontName) {
     iconName = "${iconName}_";
   }
 
+  return iconName;
+}
+
+String _getFontData(int codePoint, String fontName) {
+  final iconName = _getIconName(fontName);
   final radix16 = codePoint.toRadixString(16).toUpperCase();
   final iconDataItem =
       'static const IconData $iconName = _CarbonIconData(0x$radix16);\n';

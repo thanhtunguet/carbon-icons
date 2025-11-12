@@ -1,6 +1,6 @@
 "use strict";
 
-import CarbonMeta from "@carbon/icons/metadata.json" assert { type: "json" };
+import CarbonMeta from "@carbon/icons/metadata.json" with { type: "json" };
 import pLimit from "p-limit";
 import path from "path";
 import { copyFile, mkdir, readdir, rename, writeFile } from "fs/promises";
@@ -75,7 +75,7 @@ async function buildSVG() {
   // Create output dir
   const outPath = path.join("tool", "svg", "32");
   try {
-    mkdir(outPath, { recursive: true });
+    await mkdir(outPath, { recursive: true });
   } catch (e) {}
 
   // Limit concurrent writes

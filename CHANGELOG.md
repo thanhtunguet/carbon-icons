@@ -1,3 +1,9 @@
+## [0.2.0]
+
+### Added
+
+- Runtime icon lookup via `CarbonIcons.fromName(String)` method and `CarbonIcons.byName` map
+
 ## [0.1.0+8]
 
 ### Added
